@@ -13,34 +13,36 @@
   float: left;
 }
 
-.title span{
+.title a{
   color: white;
   font-weight: bold;
   font-size: 22px;
   text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  text-decoration: none;
 }
 
 
-.login{
+.nav{
   float: right;
   margin-top: -5px;
 }
 
-.login img{
+.nav img{
   height: 35px;
   width: 140px;
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
-.login img:hover{
+.nav img:hover{
   box-shadow: .4px .4px .4px rgba(0,0,0,.3);
 }
 
-span.logout{
+i.fa{
   color: white;
   position: relative;
   top: 8px;
-  font-size: 15px;
+  font-size: 24px;
   cursor: pointer;
+  margin-left: 10px;
 }

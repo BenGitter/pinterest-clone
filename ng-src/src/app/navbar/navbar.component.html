@@ -1,14 +1,25 @@
 <div class="full-width">
   <div class="limited-width navbar">
     <div class="title">
-      <span>Pinterest Clone</span>
+      <a routerLink="/">Pinterest Clone</a>
     </div>
 
-    <div class="login">
+    <div class="nav">
+      <!-- Login button -->
       <a *ngIf="!authService.isLoggedIn()" href="/auth/twitter">
         <img src="assets/twitter.png" alt="Log in with twitter">
       </a>
-      <span *ngIf="authService.isLoggedIn()" (click)="onLogout()" class="logout">logout</span>
+
+      <!-- Link to "My pins" -->
+      <i *ngIf="authService.isLoggedIn()" class="fa fa-user-circle"></i>
+      
+      <!-- Link to AddComponent -->
+      <a routerLink="/add">
+        <i *ngIf="authService.isLoggedIn()" class="fa fa-plus-square"></i>
+      </a>
+
+      <!-- Logout link -->
+      <i *ngIf="authService.isLoggedIn()" (click)="onLogout()" class="fa fa-sign-out logout"></i>
     </div>
   </div>
 </div>
