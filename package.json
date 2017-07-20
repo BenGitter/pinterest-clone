@@ -17,6 +17,12 @@
   },
   "homepage": "https://github.com/bengitter/pinterest-clone#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "express-session": "^1.15.4",
+    "passport": "^0.3.2",
+    "passport-twitter": "^1.0.4"
+  },
+  "devDependencies": {
+    "dotenv": "^4.0.0"
   }
 }

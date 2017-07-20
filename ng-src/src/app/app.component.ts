@@ -11,7 +11,13 @@ export class AppComponent implements OnInit{
   constructor(private authService:AuthService){}
 
   ngOnInit(){
-    this.authService.checkLogin();
+    this.authService.checkLogin().subscribe(data => {
+      if(data.success){
+        this.authService.setLoggedIn(true);
+      }else{
+        this.authService.setLoggedIn(false);
+      }
+    }); 
   }
 
 }

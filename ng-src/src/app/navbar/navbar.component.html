@@ -5,9 +5,10 @@
     </div>
 
     <div class="login">
-      <a href="/auth/twitter">
+      <a *ngIf="!authService.isLoggedIn()" href="/auth/twitter">
         <img src="assets/twitter.png" alt="Log in with twitter">
       </a>
+      <span *ngIf="authService.isLoggedIn()" (click)="onLogout()" class="logout">logout</span>
     </div>
   </div>
 </div>
