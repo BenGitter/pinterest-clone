@@ -1,0 +1,19 @@
+{
+  "name": "pinterest-clone",
+  "version": "1.0.0",
+  "description": "FCC Project: Pinterest Clone",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bengitter/pinterest-clone.git"
+  },
+  "author": "Benjamin van Zwienen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bengitter/pinterest-clone/issues"
+  },
+  "homepage": "https://github.com/bengitter/pinterest-clone#readme"
+}
