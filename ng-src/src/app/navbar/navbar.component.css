@@ -1,0 +1,38 @@
+.full-width{
+  width: 100%;
+  height: 55px;
+  background: #727cff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+
+.navbar{
+  padding: 15px 30px;
+}
+
+.title{
+  float: left;
+}
+
+.title span{
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+}
+
+
+.login{
+  float: right;
+  margin-top: -5px;
+}
+
+.login img{
+  height: 35px;
+  width: 140px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+.login img:hover{
+  box-shadow: .4px .4px .4px rgba(0,0,0,.3);
+}
