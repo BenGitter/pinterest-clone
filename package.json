@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/bengitter/pinterest-clone#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "express-session": "^1.15.4",
+    "mongoose": "^4.11.3",
     "passport": "^0.3.2",
     "passport-twitter": "^1.0.4"
   },

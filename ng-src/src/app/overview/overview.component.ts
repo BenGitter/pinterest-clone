@@ -1,3 +1,4 @@
+import { PinService } from './../pin.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  constructor() { }
+  pins:Array<any> = [];
+
+  constructor(private pinService:PinService) { }
 
   ngOnInit() {
+    this.pinService.getAllPins().subscribe(data => {
+      if(data.success){
+        this.pins = data.pins;
+      }
+    })
   }
 
 }

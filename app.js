@@ -1,4 +1,5 @@
 // Dependencies
+const bodyParser = require("body-parser");
 const path = require("path");
 const config = require("./config/config")[process.env.NODE_ENV || "production"];
 
@@ -6,6 +7,20 @@ const config = require("./config/config")[process.env.NODE_ENV || "production"];
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Mongoose
+const mongoose = require("mongoose");
+
+mongoose.Promise = global.Promise;
+mongoose.connect(config.DB_URL, {
+  useMongoClient: true
+});
+mongoose.connection.on("connected", () => {
+  console.log("Connected to database");
+});
+mongoose.connection.on("error", (err) => {
+  console.log("Error connecting to database:", err);
+});
 
 // Passport
 const session = require("express-session");
@@ -18,6 +33,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(bodyParser.json());
 
 // Routes
 const auth = require("./routes/auth");

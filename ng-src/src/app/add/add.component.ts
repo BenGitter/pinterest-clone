@@ -1,3 +1,4 @@
+import { PinService } from './../pin.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  imageLink:string = "";
+  description:string = "";
+
+  constructor(private pinService:PinService) { }
 
   ngOnInit() {
+  }
+
+  onAddPin(){
+    if(this.imageLink !== "" && this.description !== ""){
+      this.pinService.addPin(this.imageLink, this.description).subscribe(data => {
+        console.log(data);
+      });
+    }
   }
 
 }

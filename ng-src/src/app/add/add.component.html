@@ -1,3 +1,15 @@
-<p>
-  add works!
-</p>
+<h2>Add Pin</h2>
+
+<form (submit)="onAddPin()">
+  <input placeholder="Image Link" type="text" name="imageLink" [(ngModel)]="imageLink">
+  <input placeholder="Description" type="text" name="description" [(ngModel)]="description">
+
+  <button type="submit">Add Pin</button>
+</form>
+
+<br>
+
+<h3>Result:</h3>
+<img [src]="imageLink" alt="">
+
+
