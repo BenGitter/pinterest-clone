@@ -4,7 +4,7 @@
 </div>
 
 <div #grid>
-  <app-pin [attr.data-groups]="pin.postedBy" class="pin" *ngFor="let pin of pins.reverse()" (userClick)="filterByUser($event)" [pin]="pin"></app-pin> 
+  <app-pin [id]="pin._id" [attr.data-groups]="pin.postedBy" class="pin" *ngFor="let pin of pinService.pins.reverse()" (userClick)="filterByUser($event)" [pin]="pin"></app-pin> 
 </div>
   
 

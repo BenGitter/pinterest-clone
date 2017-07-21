@@ -25,3 +25,7 @@ module.exports.addPin = function(pin, callback){
 module.exports.getAllPins = function(callback){
   Pin.find(callback);
 }
+
+module.exports.removePin = function(id, callback){
+  Pin.findByIdAndRemove(id, callback);
+}

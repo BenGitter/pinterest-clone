@@ -22,12 +22,21 @@
 .user-container{
   padding-top: 2px;
   padding-right: 5px;
-  padding-bottom: 17px;
   background: #727cff;
+  height: 15px;
 }
 .user{
   float: right;
   font-size: 10px;
   color: white;
+  cursor: pointer;
+}
+
+.remove{
+  font-size: 10px;
+  color: white;
+  margin-left: 6px;
+  position: relative;
+  top: -4px;
   cursor: pointer;
 }

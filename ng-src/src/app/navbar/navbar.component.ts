@@ -26,4 +26,8 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  onFilter(){
+    this.pinService.filterPinsEvent.next(this.authService.name);
+  }
+
 }

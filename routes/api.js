@@ -33,4 +33,14 @@ router.post("/pin", (req, res) => {
   });
 });
 
+router.delete("/pin/:id", (req, res) => {
+  const id = req.params.id;
+
+  Pin.removePin(id, (err, pin) => {
+    if(err) return res.json({success: false, error: err});
+
+    res.json({success: true});
+  })
+});
+
 module.exports = router;

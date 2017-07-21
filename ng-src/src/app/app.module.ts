@@ -17,7 +17,6 @@ import { PinComponent } from './pin/pin.component';
 const appRoutes: Routes = [
   { path: "", component: OverviewComponent },
   { path: "add", component: AddComponent },
-  { path: ":name", component: OverviewComponent },
   { path: "**", component: OverviewComponent }
 ];
 
