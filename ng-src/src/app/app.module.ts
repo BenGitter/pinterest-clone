@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { MasonryModule } from 'angular2-masonry';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OverviewComponent } from './overview/overview.component';
@@ -15,6 +17,7 @@ import { PinComponent } from './pin/pin.component';
 const appRoutes: Routes = [
   { path: "", component: OverviewComponent },
   { path: "add", component: AddComponent },
+  { path: ":name", component: OverviewComponent },
   { path: "**", component: OverviewComponent }
 ];
 
@@ -30,7 +33,8 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    MasonryModule
   ],
   providers: [
     AuthService,

@@ -1,1 +1,11 @@
-<app-pin *ngFor="let pin of pins.reverse()" [pin]="pin"></app-pin>
+<div class="nav">
+  <span class="all" (click)="filterByUser()">All pins</span>
+  <span class="filter"> {{ filter }} </span>
+</div>
+
+<div #grid>
+  <app-pin [attr.data-groups]="pin.postedBy" class="pin" *ngFor="let pin of pins.reverse()" (userClick)="filterByUser($event)" [pin]="pin"></app-pin> 
+</div>
+  
+
+

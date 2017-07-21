@@ -8,7 +8,8 @@ import 'rxjs/add/operator/map';
 export class AuthService {
 
   loggedIn:boolean = false;
-
+  name:string;
+  
   constructor(private http:Http) { }
 
   checkLogin(){
@@ -20,9 +21,9 @@ export class AuthService {
   }
 
 
-  setLoggedIn(bool:boolean){
+  setLoggedIn(bool:boolean, data?:any){
     this.loggedIn = bool;
-    console.log("loggedIn:", this.loggedIn);
+    this.name = data.name;
   }
 
   isLoggedIn(){

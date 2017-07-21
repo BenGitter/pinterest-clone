@@ -1,0 +1,16 @@
+.nav{
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.nav .all{
+  color: #444;
+  cursor: pointer;
+}
+.nav .all:hover{
+  color: black;
+}
+
+.nav .filter{
+  color: #111;
+}

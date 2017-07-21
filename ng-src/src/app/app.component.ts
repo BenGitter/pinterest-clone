@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
   ngOnInit(){
     this.authService.checkLogin().subscribe(data => {
       if(data.success){
-        this.authService.setLoggedIn(true);
+        this.authService.setLoggedIn(true, data);
       }else{
         this.authService.setLoggedIn(false);
       }

@@ -11,7 +11,7 @@
       </a>
 
       <!-- Link to "My pins" -->
-      <i *ngIf="authService.isLoggedIn()" class="fa fa-user-circle"></i>
+      <i *ngIf="authService.isLoggedIn()" class="fa fa-user-circle" [routerLink]="['/'+authService.name]"></i>
       
       <!-- Link to AddComponent -->
       <a routerLink="/add">

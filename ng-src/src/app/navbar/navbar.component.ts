@@ -1,5 +1,7 @@
+import { PinService } from './../pin.service';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public authService:AuthService) { }
+  constructor(
+    public authService:AuthService,
+    public pinService:PinService
+  ) { }
 
   ngOnInit() {
   }
@@ -18,7 +23,7 @@ export class NavbarComponent implements OnInit {
       if(data.success){
         this.authService.setLoggedIn(false);
       }
-    })
+    });
   }
 
 }

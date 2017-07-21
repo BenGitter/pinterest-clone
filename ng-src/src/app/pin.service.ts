@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 
+import { Subject } from 'rxjs/Subject';
+
 @Injectable()
 export class PinService {
+
+  filterPinsEvent:Subject<string> = new Subject();
 
   constructor(private http:Http) { }
 

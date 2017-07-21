@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-pin',
@@ -8,11 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PinComponent implements OnInit {
 
   @Input() pin;
+  @Output() userClick: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
+  } 
 
+  onUserClicked(){
+    this.userClick.emit(this.pin.postedBy);
   }
 
 }

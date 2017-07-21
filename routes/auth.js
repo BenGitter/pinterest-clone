@@ -16,7 +16,7 @@ router.get("/failure", (req, res) => {
 
 router.get("/status", (req, res) => {
   if(req.user){
-    res.json({success: true});
+    res.json({success: true, name: req.user.name});
   }else{
     res.json({success: false});
   }
@@ -28,6 +28,14 @@ router.get("/logout", (req, res) => {
   }
 
   res.json({success: true});
+});
+
+router.get("/user", (req, res) => {
+  if(req.user){
+    res.json({success: true, name: req.user.name});
+  }else{
+    res.json({success: false, error: "Not logged in"});
+  }
 });
 
 module.exports = router;

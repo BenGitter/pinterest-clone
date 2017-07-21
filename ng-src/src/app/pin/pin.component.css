@@ -1,17 +1,14 @@
 .card{
   float: left;
   background: rgba(114,124,255,.2);
-  max-width: 300px;
+  width: 250px;
   box-shadow: 2px 2px 4px rgba(114,124,255,.5), 0 0 .5px 1px rgba(114,124,255,.5);
   font-family: sans-serif;
   margin: 10px;
 }
 
 .img-container img{
-  max-width: 300px;
-  max-height: 300px;
-  min-width: 100px;
-  min-height: 100px;
+  width: 250px;
 }
 
 .description-container{
