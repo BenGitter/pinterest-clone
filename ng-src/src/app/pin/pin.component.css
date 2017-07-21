@@ -1,0 +1,36 @@
+.card{
+  float: left;
+  background: rgba(114,124,255,.2);
+  max-width: 300px;
+  box-shadow: 2px 2px 4px rgba(114,124,255,.5), 0 0 .5px 1px rgba(114,124,255,.5);
+  font-family: sans-serif;
+  margin: 10px;
+}
+
+.img-container img{
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.description-container{
+  padding: 8px 10px;
+  text-align: center;
+}
+.description{
+  color: #333;
+}
+
+.user-container{
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 17px;
+  background: #727cff;
+}
+.user{
+  float: right;
+  font-size: 10px;
+  color: white;
+  cursor: pointer;
+}

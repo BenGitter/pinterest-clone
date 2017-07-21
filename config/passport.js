@@ -6,6 +6,7 @@ const TwitterStrategy = require("passport-twitter").Strategy;
 // (de)erializeUser
 passport.serializeUser((user, callback) => {
   const _user = {
+    name: user.username,
     id: user.id
   }
   callback(null, _user);

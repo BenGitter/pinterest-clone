@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OverviewComponent } from './overview/overview.component';
 import { AddComponent } from './add/add.component';
+import { PinComponent } from './pin/pin.component';
 
 const appRoutes: Routes = [
   { path: "", component: OverviewComponent },
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     OverviewComponent,
-    AddComponent
+    AddComponent,
+    PinComponent
   ],
   imports: [
     BrowserModule,

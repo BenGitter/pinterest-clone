@@ -23,7 +23,7 @@ router.post("/pin", (req, res) => {
   const pin = new Pin({
     imageLink: req.body.imageLink || "",
     description: req.body.description || "",
-    postedBy: req.user.id
+    postedBy: req.user.name
   });
 
   Pin.addPin(pin, (err, _pin) => {
