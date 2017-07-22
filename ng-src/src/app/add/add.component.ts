@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class AddComponent implements OnInit {
 
   imageLink:string = "";
+  imageLinkChecked:string = "http://www.ohgizmo.com/wp-content/uploads/2008/03/broken_image_necklace.jpg";
   description:string = "";
 
   constructor(
@@ -22,12 +23,29 @@ export class AddComponent implements OnInit {
 
   onAddPin(){
     if(this.imageLink !== "" && this.description !== ""){
-      this.pinService.addPin(this.imageLink, this.description).subscribe(data => {
+      this.pinService.addPin(this.imageLinkChecked, this.description).subscribe(data => {
         if(data.success){
           this.router.navigate(["/"]);
         }
       });
     }
+  }
+
+  onChange(){
+    this.imageExists(this.imageLink, (exists) => {
+      if(exists){
+        this.imageLinkChecked = this.imageLink;
+      }else{
+        this.imageLinkChecked = "http://www.ohgizmo.com/wp-content/uploads/2008/03/broken_image_necklace.jpg";
+      }
+    });
+  }
+
+  imageExists(url, callback){
+    let img = new Image();
+    img.onload = () => callback(true);
+    img.onerror = () => callback(false);
+    img.src = url;
   }
 
 }

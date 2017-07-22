@@ -1,7 +1,7 @@
 <h2>Add Pin</h2>
 
 <form (submit)="onAddPin()">
-  <input placeholder="Image Link" type="text" name="imageLink" [(ngModel)]="imageLink">
+  <input (input)="onChange()" placeholder="Image Link" type="text" name="imageLink" [(ngModel)]="imageLink">
   <input placeholder="Description" type="text" name="description" [(ngModel)]="description">
 
   <button type="submit">Add Pin</button>
@@ -10,6 +10,6 @@
 <br>
 
 <h3>Result:</h3>
-<app-pin [pin]="{imageLink: imageLink, description: description, postedBy: 'Me'}"></app-pin>
+<app-pin [pin]="{imageLink: imageLinkChecked, description: description, postedBy: 'Me'}"></app-pin>
 
 
