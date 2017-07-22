@@ -1,5 +1,5 @@
 import { PinService } from './../pin.service';
-import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 
 import * as Shuffle from 'shufflejs';
 
@@ -8,7 +8,7 @@ import * as Shuffle from 'shufflejs';
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.css']
 })
-export class OverviewComponent implements OnInit, OnDestroy {
+export class OverviewComponent implements OnInit {
 
   @ViewChild("grid") grid;
 
@@ -61,10 +61,6 @@ export class OverviewComponent implements OnInit, OnDestroy {
   filterByUser(user?:string){
     this.filter = user ? "/ " + user : "";
     this.shuffle.filter(user);
-  }
-
-  ngOnDestroy(){
-    console.log("DESTROYED");
   }
 
 }
