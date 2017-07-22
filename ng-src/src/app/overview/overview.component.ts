@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { PinService } from './../pin.service';
 import { Component, ViewChild, OnInit } from '@angular/core';
 
@@ -16,12 +17,14 @@ export class OverviewComponent implements OnInit {
   filter:string = "";
 
   constructor(
-    public pinService:PinService
+    public pinService:PinService,
+    private router:Router
   ) { }
 
   ngOnInit() {
     // Get pins
-    if(this.pinService.pins.length == 0){
+    if(this.pinService.pins.length == 0 || this.router.url == "/added"){
+      this.pinService.pins = [];
       this.pinService.getAllPins().subscribe(data => {
         if(data.success){
           this.pinService.pins = data.pins;
@@ -60,7 +63,7 @@ export class OverviewComponent implements OnInit {
 
   filterByUser(user?:string){
     this.filter = user ? "/ " + user : "";
-    this.shuffle.filter(user);
+    this.shuffle.filter(user || "");
   }
 
 }

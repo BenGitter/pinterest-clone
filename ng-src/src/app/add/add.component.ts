@@ -25,7 +25,7 @@ export class AddComponent implements OnInit {
     if(this.imageLink !== "" && this.description !== ""){
       this.pinService.addPin(this.imageLinkChecked, this.description).subscribe(data => {
         if(data.success){
-          this.router.navigate(["/"]);
+          this.router.navigate(["/added"]);
         }
       });
     }
