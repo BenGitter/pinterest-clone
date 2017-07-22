@@ -1,5 +1,5 @@
 import { PinService } from './../pin.service';
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
 
 import * as Shuffle from 'shufflejs';
 
@@ -8,7 +8,7 @@ import * as Shuffle from 'shufflejs';
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.css']
 })
-export class OverviewComponent implements OnInit {
+export class OverviewComponent implements OnInit, OnDestroy {
 
   @ViewChild("grid") grid;
 
@@ -21,11 +21,14 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit() {
     // Get pins
-    this.pinService.getAllPins().subscribe(data => {
-      if(data.success){
-        this.pinService.pins = data.pins;
-      }
-    });
+    if(this.pinService.pins.length == 0){
+      this.pinService.getAllPins().subscribe(data => {
+        if(data.success){
+          this.pinService.pins = data.pins;
+        }
+      });
+    }
+    
 
     // Inelegant solution to avoid adding all pins once loaded
     let x = setInterval(() => {
@@ -58,6 +61,10 @@ export class OverviewComponent implements OnInit {
   filterByUser(user?:string){
     this.filter = user ? "/ " + user : "";
     this.shuffle.filter(user);
+  }
+
+  ngOnDestroy(){
+    console.log("DESTROYED");
   }
 
 }
